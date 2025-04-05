@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+  <title>BGMI Tournaments</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #111;
+      color: #fff;
+      padding: 20px;
+      margin: 0;
+      text-align: center;
+    }
+    .page {
+      display: none;
+    }
+    .active {
+      display: block;
+    }
+    button, a.button {
+      padding: 12px 20px;
+      font-size: 16px;
+      background: #00f57c;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      color: black;
+      text-decoration: none;
+      margin-top: 20px;
+    }
+    .tournament {
+      border: 1px solid #555;
+      background: #222;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 10px;
+    }
+    img {
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+  </style>
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
+    window.onload = () => {
+      showPage('welcome');
+    };
+  </script>
+</head>
+<body>
+
+  <!-- Page 1: Welcome -->
+  <div id="welcome" class="page">
+    <h1>Welcome to BGMI Room Matches!</h1>
+    <p>Compete. Win. Earn!</p>
+    <button onclick="showPage('tournaments')">Continue</button>
+  </div>
+
+  <!-- Page 2: Tournament List -->
+  <div id="tournaments" class="page">
+    <h1>Available Tournaments</h1>
+
+    <div class="tournament">
+      <h2>Tournament 1</h2>
+      <p><strong>Date:</strong> April 6</p>
+      <p><strong>Time:</strong> 7:00 PM</p>
+      <p><strong>Map:</strong> Erangel</p>
+      <p><strong>Mode:</strong> Squad</p>
+      <p><strong>Room Details:</strong> Will be shown 20 mins before match</p>
+      <button onclick="showPage('register')">Register</button>
+    </div>
+
+    <!-- Add more tournaments if needed -->
+
+    <a class="button" href="https://wa.me/91XXXXXXXXXX" target="_blank">Contact Admin on WhatsApp</a><br>
+    <button onclick="showPage('welcome')">Back</button>
+  </div>
+
+  <!-- Page 3: Register -->
+  <div id="register" class="page">
+    <h2>Squad Registration</h2>
+    <p>To register your squad, please fill out the Google Form linked below.</p>
+    <p>Entry Fee: ₹100 per Squad (Max 25 squads)</p>
+    <img src="phonepe-qr.jpg" width="200" alt="PhonePe QR Code"><br>
+    <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSeA0n_wJ2iPlgmqKMeywctbpuAS50VWqDHnRE0yOixQ6UGmzQ/viewform?usp=pp_url" target="_blank">Register Now</a>
+    <p>After payment and form submission, your squad will be allotted a <strong>Squad Number</strong>.</p>
+    <button onclick="showPage('tournaments')">Back to Tournaments</button>
+  </div>
+
+
+</body></html>
